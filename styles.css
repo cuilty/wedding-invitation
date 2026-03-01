@@ -1,0 +1,837 @@
+/* ========================================
+   Wedding Invitation - Minimalist Watercolor Palm
+   Hawaii Wedding | Soft Sage & White
+   Inspired by elegant watercolor palm invitation
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500&family=Libre+Bodoni:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --white: #ffffff;
+    --cream: #faf9f6;
+    --sage-lightest: #e8ede6;
+    --sage-light: #c5d1c0;
+    --sage: #8a9e82;
+    --sage-dark: #6b7f64;
+    --sage-darker: #4a5d44;
+    --text-primary: #2c2c2c;
+    --text-secondary: #5a5a5a;
+    --text-light: #7a7a7a;
+    --gold: #c4a96a;
+    --gold-light: #d4be8a;
+    --border-light: rgba(138, 158, 130, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    overflow-x: hidden;
+    color: var(--text-primary);
+}
+
+/* ========================================
+   Landing Page Styles
+   ======================================== */
+
+.container {
+    width: 100%;
+    max-width: 550px;
+    z-index: 1;
+}
+
+/* Invitation Card */
+.invitation-card {
+    background: var(--white);
+    padding: 3rem 2.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--border-light);
+}
+
+/* Watercolor Palm Tree Header - real image */
+.palm-header {
+    margin: -3rem -2.5rem 1.5rem -2.5rem;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.palm-header img {
+    width: 75%;
+    max-width: 340px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+/* Decorative Top (legacy - hidden) */
+.decorative-top {
+    display: none;
+}
+
+/* Background palm decorations for invitation pages */
+body.invitation-page::before,
+body.invitation-page::after {
+    content: '';
+    position: fixed;
+    top: -5%;
+    width: 280px;
+    height: 380px;
+    pointer-events: none;
+    z-index: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.12;
+}
+
+body.invitation-page::before {
+    left: -60px;
+    background-image: url('photos/palm-light.png');
+    background-position: left top;
+}
+
+body.invitation-page::after {
+    right: -60px;
+    background-image: url('photos/palm-light-mirror.png');
+    background-position: right top;
+}
+
+/* Typography */
+.prelude {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    font-weight: 400;
+}
+
+.names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.names-first,
+.names-second {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.names-ampersand {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: var(--sage);
+    line-height: 1;
+    margin: 0.2rem 0;
+    font-style: italic;
+}
+
+.invite-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Location */
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.location-icon {
+    display: none;
+}
+
+.location p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Date display - large style */
+.date-display {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.date-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+.date-month-year {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 0.3rem;
+}
+
+.date p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.divider span:first-child,
+.divider span:last-child {
+    flex: 1;
+    height: 1px;
+    background: var(--sage-light);
+    max-width: 80px;
+}
+
+.hibiscus {
+    color: var(--sage);
+    font-size: 0.8rem;
+}
+
+/* Language Prompts */
+.language-prompt,
+.language-prompt-es {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.language-prompt-es {
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+
+/* Buttons */
+.language-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 2.5rem;
+    border-radius: 0;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.btn-primary {
+    background: var(--sage-dark);
+    color: var(--white);
+    border: 1px solid var(--sage-dark);
+}
+
+.btn-primary:hover {
+    background: var(--sage-darker);
+    border-color: var(--sage-darker);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--sage-dark);
+    border: 1px solid var(--sage-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--sage-dark);
+    color: var(--white);
+}
+
+/* Footer */
+.footer {
+    margin-top: 2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.footer p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.footer a {
+    color: var(--sage-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--text-primary);
+}
+
+/* ========================================
+   Invitation Page Styles
+   ======================================== */
+
+/* Full-page invitation body override */
+body.invitation-page {
+    justify-content: flex-start;
+    padding: 0;
+    background: var(--cream);
+}
+
+body.invitation-page .container {
+    max-width: 700px;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+body.invitation-page .section {
+    position: relative;
+    z-index: 1;
+}
+
+body.invitation-page .footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hero Section */
+.hero {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2rem 0;
+}
+
+/* Section Styles */
+.section {
+    padding: 3rem 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
+
+/* Palm divider between sections */
+.section-divider {
+    text-align: center;
+    margin: 1rem auto 2rem;
+    opacity: 0.3;
+}
+
+.section-divider svg {
+    width: 60px;
+    height: auto;
+}
+
+/* Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.detail-card {
+    background: var(--white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border: 1px solid var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-2px);
+}
+
+.detail-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+}
+
+.detail-card p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Inline detail cards (hero area) */
+.detail-card-inline {
+    border: none;
+    box-shadow: none;
+    padding: 1rem;
+    background: transparent;
+}
+
+.detail-card-inline h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.detail-card-inline p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* RSVP Form */
+.rsvp-form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--sage-light);
+    border-radius: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    background: var(--white);
+    transition: border-color 0.3s ease;
+    font-weight: 300;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--sage-dark);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Radio Buttons */
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.radio-option input[type="radio"] {
+    width: auto;
+    accent-color: var(--sage-dark);
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    border: 1px solid var(--sage-dark);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sage-dark);
+    text-decoration: none;
+    font-size: 0.7rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--text-primary);
+}
+
+/* ========================================
+   Love Story Section
+   ======================================== */
+
+.story-container {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.story-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.story-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--sage-light);
+}
+
+.story-item {
+    position: relative;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+}
+
+.story-item:last-child {
+    padding-bottom: 0;
+}
+
+.story-item::before {
+    content: '';
+    position: absolute;
+    left: -2.05rem;
+    top: 0.3rem;
+    width: 8px;
+    height: 8px;
+    background: var(--sage);
+    border-radius: 50%;
+}
+
+.story-date {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    color: var(--sage-dark);
+    padding: 0.2rem 0;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.story-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.story-item p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* ========================================
+   Photos
+   ======================================== */
+
+/* Hero Photo */
+.hero-photo {
+    max-width: 240px;
+    margin: 0 auto 1.5rem;
+    overflow: hidden;
+}
+
+.hero-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: saturate(0.85);
+}
+
+/* Section Photo */
+.section-photo {
+    max-width: 550px;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+}
+
+.section-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: saturate(0.85);
+}
+
+/* Dogs Section */
+.dogs-section {
+    text-align: center;
+}
+
+.dogs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.dogs-photo {
+    overflow: hidden;
+}
+
+.dogs-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: saturate(0.85);
+}
+
+/* ========================================
+   Animations
+   ======================================== */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(15px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gentle float for decorative elements */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+    }
+
+    .invitation-card {
+        padding: 2rem 1.5rem 2rem;
+    }
+
+    .palm-header {
+        margin: -2rem -1.5rem 1.5rem -1.5rem;
+    }
+
+    .names,
+    .names-first,
+    .names-second {
+        font-size: 2rem;
+    }
+
+    .names-ampersand {
+        font-size: 2.5rem;
+    }
+
+    .date-day {
+        font-size: 3rem;
+    }
+
+    .language-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .hero {
+        padding: 1rem 1rem 0;
+    }
+
+    .section {
+        padding: 2rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .hero-photo {
+        max-width: 180px;
+    }
+
+    .dogs-grid {
+        gap: 0.75rem;
+    }
+
+    .story-timeline {
+        padding-left: 1.5rem;
+    }
+
+    .story-item::before {
+        left: -1.55rem;
+        width: 6px;
+        height: 6px;
+    }
+
+    .story-item {
+        padding-left: 1rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    body.invitation-page::before,
+    body.invitation-page::after {
+        width: 150px;
+        height: 200px;
+        opacity: 0.08;
+    }
+
+    body.invitation-page::before {
+        left: -40px;
+    }
+
+    body.invitation-page::after {
+        right: -40px;
+    }
+}
+
+/* ========================================
+   Hide old tropical elements
+   ======================================== */
+
+.leaf {
+    display: none;
+}
+
+.palm-decoration {
+    display: none;
+}
