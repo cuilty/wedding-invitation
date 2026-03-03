@@ -835,3 +835,71 @@ body.invitation-page .footer {
 .palm-decoration {
     display: none;
 }
+
+/* ========================================
+   RSVP Submission States
+   ======================================== */
+
+.btn-loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.rsvp-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    max-width: 450px;
+    margin: 0 auto;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.rsvp-message-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.rsvp-message h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.rsvp-message p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+.rsvp-message a {
+    color: var(--sage-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.rsvp-message a:hover {
+    color: var(--text-primary);
+}
+
+.rsvp-success .rsvp-message-icon {
+    background: var(--sage-lightest);
+    color: var(--sage-dark);
+    border: 1px solid var(--sage-light);
+}
+
+.rsvp-error .rsvp-message-icon {
+    background: #fdf2f2;
+    color: #c0392b;
+    border: 1px solid #f0d0d0;
+}
